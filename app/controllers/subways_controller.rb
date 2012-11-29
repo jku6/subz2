@@ -13,28 +13,23 @@ class SubwaysController < ApplicationController
       #   long = place[0].longitude
       #   addr = place[0].address
 
-      #   @subway = Subway.new
-      #   @subway.name = addr
-      #   @subway.lat = lat
-      #   @subway.long = long
-      #   @subway.line = line
-      #   # code
+
+      x = HTTParty.get('http://data.cityofnewyork.us/api/views/drex-xx56/rows.json')
+      y = JSON(x.body)
 
 
-        
+      z = y["data"].length
+
+      5.times do |a|
+      @lat = y["data"][a][9][1]
+      @long = y["data"][a][9][2]
+      @line = y["data"][a][12]
+      @name = y["data"][a][10]
 
 
-      #   respond_to do |format|
-      #     if @subway.save
-      #       format.html { redirect_to @, notice: 'Vacation was successfully created.' }
-      #       format.json { render json: @vacation, status: :created, location: @vacation }
-      #     else
-      #       format.html { render action: "new" }
-      #       format.json { render json: @vacation.errors, status: :unprocessable_entity }
-      #     end
-      #   end
-      # end
 
+      @subway = Subway.create(name: @name, lat: @lat, long: @long, line: @line)
+      end
     end
 
 end

@@ -1,1 +1,9 @@
 show
+
+<div id="map_canvas"></div>
+<script>
+    display_map(40.7142, -74.0064, 13);
+</script>
+
+
+<%= render :partial => 'pin', :locals => { :subway => @subway } %>
