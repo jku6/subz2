@@ -1,4 +1,8 @@
 Subz2::Application.routes.draw do
+  
+  match '/populate' => 'subways#new', :via => :get
+  match '/entrances' => 'subways#create', :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
