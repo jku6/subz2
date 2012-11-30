@@ -5,6 +5,8 @@ class SubwaysController < ApplicationController
     def new
     end
 
+    
+
     def create
 
       #   # This is the added code
@@ -20,7 +22,7 @@ class SubwaysController < ApplicationController
 
       z = y["data"].length
 
-      5.times do |a|
+      z.times do |a|
       @lat = y["data"][a][9][1]
       @long = y["data"][a][9][2]
       @line = y["data"][a][12]
@@ -30,6 +32,21 @@ class SubwaysController < ApplicationController
 
       @subway = Subway.create(name: @name, lat: @lat, long: @long, line: @line)
       end
+      @subways = Subway.all
+
+
+    end
+
+    def search
+
+
+      query = params[:query]
+      if query.present?
+        @subways = Subway.text_search(query)
+      else
+        @subways = Subway.all
+      end
+  
     end
 
 end

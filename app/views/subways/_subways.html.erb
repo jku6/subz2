@@ -1,18 +1,10 @@
-<%= render 'search' %>
-
-
-<div id="markers">
-
 <div id="map_canvas"></div>
 <script>
     display_map(40.7142, -74.0064, 13);
 </script>
-
-
 
 <% @subways.each do |x| %>
     <script>
         add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>');
     </script>
 <% end %>
-</div>

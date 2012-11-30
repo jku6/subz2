@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Subz2</title>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+  
 
   <!-- add this for google maps -->
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{GOOGLEKEY}&sensor=false" %>
 
-  
+
   <%= csrf_meta_tags %>
 </head>
 <body>

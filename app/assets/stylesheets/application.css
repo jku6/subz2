@@ -16,6 +16,66 @@
 #map_canvas
  {
 
-        width: 500px;
-        height: 500px;
+    width: 960px;
+    height: 100%;
+    position:absolute;
  }
+ body {
+    height: 100%;
+    width: 960px;
+    margin: auto;
+    text-align: center;
+
+ }
+ /*html {
+    height: 100%;
+ }*/
+ #markers {
+    height: 100%
+ }
+ .top {
+    margin-bottom: 120px;
+ }
+ .button {
+    
+
+    background-color: white;
+    width: 300px;
+    height: 300px;  
+    font-size: 50px;
+    border-radius: 200px;
+    border: 5px solid #ccc; margin: 18px; -webkit-transition: margin 0.5s ease-out; -moz-transition: margin 0.5s ease-out; -o-transition: margin 0.5s ease-out;
+    /*transition: opacity .25s ease-in-out;
+        -moz-transition: opacity .25s ease-in-out;
+        -webkit-transition: opacity .25s ease-in-out;*/
+    opacity: .5;
+    font-family: 'Lobster', cursive;
+ }
+ .button:hover {
+     margin-top: 2px; 
+     opacity: 1;
+     font-family: 'Lobster', cursive;
+        
+ }
+
+
+ #query {
+    background-color: white;
+    width: 954px;
+    text-align: center;
+    font-size: 30px;
+    height: 50px;
+    font-family: 'Lobster', cursive;
+
+    
+ }
+ #query:hover {
+    background-color: white;
+    border: 2px dashed black;
+    border-radius: 15px;
+    font-size: 30px;
+    height: 50px;
+    font-family: 'Lobster', cursive;
+
+ }
+
