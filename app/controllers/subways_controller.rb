@@ -15,6 +15,7 @@ class SubwaysController < ApplicationController
       #   long = place[0].longitude
       #   addr = place[0].address
 
+      if Subway.blank?
 
       x = HTTParty.get('http://data.cityofnewyork.us/api/views/drex-xx56/rows.json')
       y = JSON(x.body)
@@ -31,6 +32,7 @@ class SubwaysController < ApplicationController
 
 
       @subway = Subway.create(name: @name, lat: @lat, long: @long, line: @line)
+      end
       end
       @subways = Subway.all
 
